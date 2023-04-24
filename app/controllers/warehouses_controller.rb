@@ -1,6 +1,7 @@
 class WarehousesController < ApplicationController
 
-    def show 
+    def show
+        @warehouse = Warehouse.find(params[:id])
     end
 
 end
