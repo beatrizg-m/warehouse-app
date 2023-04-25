@@ -5,6 +5,7 @@ class WarehousesController < ApplicationController
     end
 
     def new
+        @warehouse = Warehouse.new
     end
 
     def create
@@ -12,9 +13,13 @@ class WarehousesController < ApplicationController
         warehouse_params = params.require(:warehouse).permit(:name, :code, :city, :description,
                                                             :address, :cep, :area) #Strong Parameters
 
-        w = Warehouse.new(warehouse_params)
-        w.save()
+        @warehouse = Warehouse.new(warehouse_params)
+        if @warehouse.save()
+            redirect_to root_path, notice: 'Galpao cadastrado com sucesso.'
+        else
+            flash.now[:notice] = 'Galpao nao cadastrado'
+            render 'new'
+        end
 
-        redirect_to root_path, notice: 'Galpao cadastrado com sucesso.'
     end
 end

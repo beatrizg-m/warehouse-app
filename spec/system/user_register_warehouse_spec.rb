@@ -39,4 +39,18 @@ describe 'usuario cadastra um galpao' do
     expect(page).to have_content 'RIO'
     expect(page).to have_content '32000 m2'
   end
+
+  it 'com dados incompletos' do
+    #Arrange
+
+    #Act
+    visit root_path
+    click_on 'Cadastrar Galpao'
+    fill_in 'Nome', with: ''
+    fill_in 'Descricao', with: ''
+    click_on 'Enviar'
+
+    #Assert
+    expect(page).to have_content 'Galpao nao cadastrado'
+  end
 end
