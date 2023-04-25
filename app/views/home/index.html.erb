@@ -2,6 +2,9 @@
 <section>
   <h2>Galpoes</h2>
   <div>
+    <%= flash[:notice] %>
+  </div>
+  <div>
     <%= link_to('Cadastrar Galpao', new_warehouse_path )%>
   </div>
   <% @warehouses.each do |w|%>

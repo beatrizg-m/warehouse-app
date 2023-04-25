@@ -15,6 +15,6 @@ class WarehousesController < ApplicationController
         w = Warehouse.new(warehouse_params)
         w.save()
 
-        redirect_to root_path
+        redirect_to root_path, notice: 'Galpao cadastrado com sucesso.'
     end
 end
