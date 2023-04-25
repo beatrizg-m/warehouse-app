@@ -1,12 +1,17 @@
-Detalhes de um Galpao
 <h1>Galpao <%= @warehouse.code %></h1>
 <div>
-  <strong>Nome:</strong> <%= @warehouse.name %>
-  <strong>Cidade:</strong> <%= @warehouse.city %>
-  <strong>Area:</strong> <%= @warehouse.area  %>
-  <strong>Endereco:</strong> <%= @warehouse.address %>
-  <strong>CEP:</strong> <%= @warehouse.cep %>
-  <strong>Descricao:</strong> <%= @warehouse.description %>
+  <dt>Nome:</dt>
+  <dd><%= @warehouse.name %></dd>
+  <dt>Cidade:</dt>
+  <dd><%= @warehouse.city %></dd>
+  <dt>Area:</dt>
+  <dd><%= @warehouse.area  %></dd>
+  <dt>Endereco:</dt>
+  <dd><%= @warehouse.address %></dd>
+  <dt>CEP:</dt>
+  <dd><%= @warehouse.cep %></dd>
+  <dt>Descricao:</dt>
+  <dd><%= @warehouse.description %></dd>
 </div>
 
 <%= link_to('Voltar', root_path)%>
