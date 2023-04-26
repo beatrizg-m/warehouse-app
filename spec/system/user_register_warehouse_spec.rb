@@ -9,12 +9,12 @@ describe 'usuario cadastra um galpao' do
     click_on 'Cadastrar Galpao'
     #Assert
     expect(page).to have_field('Nome')
-    expect(page).to have_field('Descricao')
-    expect(page).to have_field('Codigo')
-    expect(page).to have_field('Endereco')
+    expect(page).to have_field('Descrição')
+    expect(page).to have_field('Código')
+    expect(page).to have_field('Endereço')
     expect(page).to have_field('Cidade')
     expect(page).to have_field('CEP')
-    expect(page).to have_field('Area')
+    expect(page).to have_field('Área')
   end
 
   it 'com sucesso' do
@@ -24,12 +24,12 @@ describe 'usuario cadastra um galpao' do
     visit root_path
     click_on 'Cadastrar Galpao'
     fill_in 'Nome', with: 'Rio de Janeiro'
-    fill_in 'Descricao', with: 'Galpao da zona portuaria do Rio'
-    fill_in 'Codigo', with: 'RIO'
-    fill_in 'Endereco', with: 'Avenida do Museu do amanha, 1000'
+    fill_in 'Descrição', with: 'Galpao da zona portuaria do Rio'
+    fill_in 'Código', with: 'RIO'
+    fill_in 'Endereço', with: 'Avenida do Museu do amanha, 1000'
     fill_in 'Cidade', with: 'Rio de Janeiro'
     fill_in 'CEP', with: '20100-000'
-    fill_in 'Area', with: '32000'
+    fill_in 'Área', with: '32000'
     click_on 'Enviar'
 
     #Assert
@@ -47,10 +47,23 @@ describe 'usuario cadastra um galpao' do
     visit root_path
     click_on 'Cadastrar Galpao'
     fill_in 'Nome', with: ''
-    fill_in 'Descricao', with: ''
+    fill_in 'Descrição', with: ''
+    fill_in 'Código', with: ''
+    fill_in 'Endereço', with: ''
+    fill_in 'Cidade', with: ''
+    fill_in 'CEP', with: ''
+    fill_in 'Área', with: ''
     click_on 'Enviar'
 
     #Assert
     expect(page).to have_content 'Galpao nao cadastrado'
+    expect(page).to have_content 'Nome não pode ficar em branco'
+    expect(page).to have_content 'Código não pode ficar em branco'
+    expect(page).to have_content 'Cidade não pode ficar em branco'
+    expect(page).to have_content 'Área não pode ficar em branco'
+    expect(page).to have_content 'Descrição não pode ficar em branco'
+    expect(page).to have_content 'CEP não pode ficar em branco'
+    expect(page).to have_content 'Endereço não pode ficar em branco'
+
   end
 end
