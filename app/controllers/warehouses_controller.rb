@@ -9,9 +9,8 @@ class WarehousesController < ApplicationController
     end
 
     def create
-        #receber dados enviados e criar um novo galpao
         warehouse_params = params.require(:warehouse).permit(:name, :code, :city, :description,
-                                                            :address, :cep, :area) #Strong Parameters
+                                                            :address, :cep, :area)
 
         @warehouse = Warehouse.new(warehouse_params)
         if @warehouse.save()

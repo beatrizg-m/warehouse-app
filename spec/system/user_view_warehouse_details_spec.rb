@@ -24,7 +24,6 @@ describe 'Usuario ve detalhe de um galpao ' do
 
   it 'e volta para a tela inicial' do
     #Arrange
-    #Vamos novamente criar um galpao pois o galpao só existe dentro do teste
     Warehouse.create(name: 'Aeroporto SP', code: 'GRU',
       city: 'Guarulhos',
       area: 100_000,
@@ -34,9 +33,7 @@ describe 'Usuario ve detalhe de um galpao ' do
     visit(root_path)
     click_on('Aeroporto SP')
     click_on('Voltar')
-
     #Assert
-    #vamos usar o current_path que ao invez de procurar algo na página, ele procura pelo url da página.
     expect(current_path).to eq(root_path)
   end
 end
