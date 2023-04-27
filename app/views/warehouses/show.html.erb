@@ -13,5 +13,5 @@
   <dt>Descricao:</dt>
   <dd><%= @warehouse.description %></dd>
 </div>
-
+<%= link_to('Editar', edit_warehouse_path(@warehouse.id))%>
 <%= link_to('Voltar', root_path)%>
