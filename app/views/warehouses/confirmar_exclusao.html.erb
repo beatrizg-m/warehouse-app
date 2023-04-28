@@ -1,0 +1,7 @@
+<h1>Confirmação de exclusão</h1>
+<p>Tem certeza que deseja excluir este objeto?</p>
+<%= form_with url: warehouse_path(@warehouse.id), method: :delete do |f| %>
+  <%= f.submit "Confirmar exclusão" %>
+  <%= link_to "Cancelar", warehouse_path(@warehouse.id) %>
+  <% link_to 'Confirmar', root_path%>
+<% end %>
