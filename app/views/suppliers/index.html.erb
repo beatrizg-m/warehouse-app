@@ -1,0 +1,16 @@
+<h1>Fornecedores</h1>
+
+<% @suppliers.each do | s |%>
+  <div>
+    <dl>
+      <dt><strong>Fornecedor:</strong></dt>
+      <dd><%= s.brand_name %></dd>
+      <dt><strong>Número de registro: </strong></dt>
+      <dd><%= s.registration_number %></dd>
+    </dl>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to('Voltar', root_path)%>
+</div>
