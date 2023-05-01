@@ -4,7 +4,7 @@
   <div>
     <dl>
       <dt><strong>Fornecedor:</strong></dt>
-      <dd><%= s.brand_name %></dd>
+      <%= link_to(s.brand_name, supplier_path(s.id)) %>
       <dt><strong>Número de registro: </strong></dt>
       <dd><%= s.registration_number %></dd>
     </dl>
