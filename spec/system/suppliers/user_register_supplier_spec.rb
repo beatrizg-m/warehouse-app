@@ -47,24 +47,24 @@ describe 'Usuario cadastra um fornecedor' do
     expect(page).to have_content 'Email: ponyo.contato@yahoo.com'
   end
 
-  # it 'E falha por não preencher todos os campos' do
-  #   #Arrange
+  it 'E falha por não preencher todos os campos' do
+    #Arrange
 
-  #   #Act
-  #   visit root_path
-  #   click_on 'Fornecedores'
-  #   click_on 'Cadastrar Fornecedor'
-  #   fill_in 'Nome Corporativo', with: ''
-  #   fill_in 'Nome Fantasia', with: 'Ponyo'
-  #   fill_in 'Número de Registro', with: '1234565478902'
-  #   fill_in 'Endereço Completo', with: ''
-  #   fill_in 'Cidade', with: 'Recife'
-  #   fill_in 'Estado', with: ''
-  #   fill_in 'Email', with: 'ponyo.contato@yahoo.com'
-  #   click_on 'Enviar'
+    #Act
+    visit root_path
+    click_on 'Fornecedores'
+    click_on 'Cadastrar Fornecedor'
+    fill_in 'Nome Corporativo', with: ''
+    fill_in 'Nome Fantasia', with: 'Ponyo'
+    fill_in 'Número de Registro', with: '1234565478902'
+    fill_in 'Endereço Completo', with: ''
+    fill_in 'Cidade', with: 'Recife'
+    fill_in 'Estado', with: ''
+    fill_in 'Email', with: 'ponyo.contato@yahoo.com'
+    click_on 'Enviar'
 
-  #   #Assert
-  #   expect(page).to have_content 'Fornecedor não cadastrado'
-  #   expect(current_path).to eq new_supplier_path
-  # end
+    #Assert
+    expect(page).to have_content 'Fornecedor não cadastrado'
+
+  end
 end

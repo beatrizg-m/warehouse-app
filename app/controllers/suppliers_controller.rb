@@ -19,7 +19,7 @@ class SuppliersController < ApplicationController
     if @supplier.save()
       redirect_to supplier_path(@supplier.id), notice: 'Fornecedor cadastrado com sucesso'
     else
-      flash.now[:notice] = 'Fornecedor nao cadastrado'
+      flash.now[:notice] = 'Fornecedor não cadastrado'
       render 'new'
     end
 
