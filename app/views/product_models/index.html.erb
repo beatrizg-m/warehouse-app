@@ -1,0 +1,13 @@
+<h1>Modelos de Produtos</h1>
+
+<%= @product_models.each do |p|%>
+  <div>
+    <h2><%= p.name %></h2>
+    <dl>
+      <dt>SKU: </dt>
+      <dd><%= p.sku %></dd>
+      <dt>Fornecedor: </dt>
+      <dd><%= p.supplier.brand_name %></dd>
+    </dl>
+  </div>
+<% end %>
