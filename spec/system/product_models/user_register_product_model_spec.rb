@@ -3,10 +3,12 @@ require 'rails_helper'
 describe 'usuário cadastra um modelo de produto' do
   it 'com sucesso' do
     #Arrange
+    user = User.create!(name: 'Joao', email: 'joao@email.com', password: 'password')
     supplier = Supplier.create!(corporate_name: 'Samsung LTDA', brand_name: 'Samsung',
                     registration_number: '1234567787456', full_address: 'Av nacoes Unidas, 1000',
                     city: 'São Palo', state: 'SP', email: 'sac@samsung.com')
     #Act
+    login_as(user)
     visit root_path
     click_on 'Modelos de Produtos'
     click_on 'Cadastrar novo'
