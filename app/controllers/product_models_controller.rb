@@ -30,5 +30,5 @@ end
 private
 
 def product_model_params
-  product_model_params = params.require(:product_model).permit(:name,       :height, :width, :depth, :weight, :sku, :supplier_id)
+  product_model_params = params.require(:product_model).permit(:name, :height, :width, :depth, :weight, :sku, :supplier_id)
 end
