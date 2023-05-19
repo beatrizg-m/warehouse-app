@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :user
   root to: 'home#index'
   resources :warehouses, only: [:show, :new, :create, :edit, :update, :destroy]
   get 'warehouses/:id/confirmar_exclusao', to: 'warehouses#confirmar_exclusao', as: 'confirmar_exclusao'

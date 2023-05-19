@@ -1,7 +1,17 @@
 require 'rails_helper'
 
 describe 'Usúario faz um pedido' do
+  it 'e deve estar autenticado' do
+    visit root_path
+    click_on 'Registrar Pedido'
+
+    expect(current_path).to eq new_user_session_path
+  end
+
   it 'através da página de registro de pedido' do
+    user = User.create!(name: 'Joao', email: 'joao@email.com', password: 'password')
+
+    login_as(user)
     visit root_path
     click_on 'Registrar Pedido'
 
