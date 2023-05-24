@@ -10,10 +10,8 @@ describe 'usuário entra na página de fornecedores' do
     click_on 'Fornecedores'
     #Assert
     expect(current_path).to eq(suppliers_path)
-    expect(page).to have_content 'Fornecedor: ACME'
-    expect(page).to have_content 'Número de registro: 2345678912'
-    expect(page).to have_content 'Fornecedor: Ponyo'
-    expect(page).to have_content 'Número de registro: 2000078912'
+    expect(page).to have_content 'Fornecedor: ACME LTDA | 2345678912'
+    expect(page).to have_content 'Fornecedor: Ponyo Industria Brasil | 2000078912'
   end
 
   it 'e volta para a página inicial' do

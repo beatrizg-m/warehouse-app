@@ -4,6 +4,7 @@ pt-BR:
       product_model: 'Modelo de Produto'
     attributes:
       product_model:
+        supplier_id: 'Fornecedor'
         name: 'Nome'
         weight: 'Peso'
         height: 'Altura'
@@ -11,4 +12,5 @@ pt-BR:
         depth: 'Profundidade'
         sku: 'SKU'
         supplier_id: 'Fornecedor'
+        dimensions: 'Dimensões'
 

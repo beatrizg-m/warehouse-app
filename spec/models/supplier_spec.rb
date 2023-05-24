@@ -68,4 +68,15 @@ RSpec.describe Supplier, type: :model do
 
   end
 
+  describe 'full_register' do
+    it 'visualiza o nome e o cnpj juntos' do
+      s = Supplier.new(corporate_name: 'ACME', registration_number: '2345678912')
+
+      result = s.full_register
+
+      expect(result).to eq('ACME | 2345678912')
+    end
+
+  end
+
 end

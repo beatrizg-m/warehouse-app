@@ -1,19 +1,17 @@
 <h1>Detalhes do Fornecedor <%= @supplier.brand_name %></h1>
 
 <div>
-  <dt>Nome Corporativo:</dt>
-  <dd><%= @supplier.corporate_name %></dd>
-  <dt>Nome Fantasia:</dt>
+  <dt><%= Supplier.human_attribute_name(:full_register)%>:</dt>
+  <dd><%= @supplier.full_register %></dd>
+  <dt><%= Supplier.human_attribute_name(:brand_name)%>:</dt>
   <dd><%= @supplier.brand_name %></dd>
-  <dt>Número de Registro:</dt>
-  <dd><%= @supplier.registration_number %></dd>
-  <dt>Endereço Completo:</dt>
+  <dt><%= Supplier.human_attribute_name(:full_address)%>:</dt>
   <dd><%= @supplier.full_address %></dd>
-  <dt>Cidade:</dt>
+  <dt><%= Supplier.human_attribute_name(:city)%>:</dt>
   <dd><%= @supplier.city %></dd>
-  <dt>Estado:</dt>
+  <dt><%= Supplier.human_attribute_name(:state)%>:</dt>
   <dd><%= @supplier.state %></dd>
-  <dt>Email:</dt>
+  <dt><%= Supplier.human_attribute_name(:email)%>:</dt>
   <dd><%= @supplier.email %></dd>
 </div>
 

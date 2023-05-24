@@ -3,10 +3,11 @@
 <% @suppliers.each do | s |%>
   <div>
     <dl>
-      <dt><strong>Fornecedor:</strong></dt>
-      <%= link_to(s.brand_name, supplier_path(s.id)) %>
-      <dt><strong>Número de registro: </strong></dt>
-      <dd><%= s.registration_number %></dd>
+      <dt>
+       <strong><%= Supplier.model_name.human%>:</strong>
+      </dt>
+      <%= link_to(s.full_register) %>
+      <%= link_to('Editar', edit_supplier_path(s.id))%>
     </dl>
   </div>
 <% end %>

@@ -38,9 +38,8 @@ describe 'Usuario cadastra um fornecedor' do
     expect(current_path).to eq "/suppliers/1"
     expect(page).to have_content 'Detalhes do Fornecedor Ponyo'
     expect(page).to have_content 'Fornecedor cadastrado com sucesso'
-    expect(page).to have_content 'Nome Corporativo: Ponyo Brasil LTDA'
+    expect(page).to have_content 'Nome Corporativo e CNPJ: Ponyo Brasil LTDA | 1234565478902'
     expect(page).to have_content 'Nome Fantasia: Ponyo'
-    expect(page).to have_content 'Número de Registro: 1234565478902'
     expect(page).to have_content 'Endereço Completo: Avenida do mar, 1000'
     expect(page).to have_content 'Cidade: Recife'
     expect(page).to have_content 'Estado: PE'

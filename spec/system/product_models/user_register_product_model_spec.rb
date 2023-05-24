@@ -26,7 +26,7 @@ describe 'usuário cadastra um modelo de produto' do
     expect(page).to have_content 'Modelo de produto cadastrado com sucesso'
     expect(page).to have_content 'TV 40 polegadas'
     expect(page).to have_content 'SKU: TV40-SAMS-PTXO0'
-    expect(page).to have_content 'Dimensões: 60cm x 90cm x 10cm'
+    expect(page).to have_content 'Dimensões: 60cm X 90cm X 10cm'
     expect(page).to have_content 'Peso: 10000g'
     expect(page).to have_content 'Fornecedor: Samsung'
   end

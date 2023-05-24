@@ -1,14 +1,14 @@
-<h1>Modelos de Produtos</h1>
+<h1><%= ProductModel.model_name.human%></h1>
 <%= link_to('Cadastrar novo', new_product_model_path)%>
 <% if @product_models.any? %>
   <%= @product_models.each do |p|%>
     <div>
       <h2><%= p.name %></h2>
       <dl>
-        <dt>SKU: </dt>
+        <dt><%= ProductModel.human_attribute_name(:sku)%></dt>
         <dd><%= p.sku %></dd>
-        <dt>Fornecedor: </dt>
-        <dd><%= p.supplier.brand_name %></dd>
+        <dt><%= Supplier.human_attribute_name(:supplier)%></dt>
+        <dd><%= p.supplier.full_register %></dd>
       </dl>
     </div>
   <% end %>
