@@ -18,6 +18,14 @@ describe 'Usúario faz um pedido' do
     expect(page).to have_content 'Registre seu pedido'
   end
 
+  it 'com data prevista de entrega passada' do
+    order = Order.new(estimated_delivery_date: 1.day.ago)
+
+    order.valid?
+
+    expect(order.errors.include? :estimated_delivery_date).to be true
+  end
+
   it 'com sucesso' do
     #Arrange
     user = User.create!(name: 'Joao', email: 'joao@email.com', password: 'password')
@@ -32,6 +40,7 @@ describe 'Usúario faz um pedido' do
                                 full_address: 'Av das Ubaias, 50', city: 'Bauru', state: 'SP',
                                 email: 'contato@acme.com')
 
+    allow(SecureRandom).to receive(:alphanumeric).and_return('ABC12345')
 
     #Act
     login_as(user)
@@ -39,14 +48,15 @@ describe 'Usúario faz um pedido' do
     click_on 'Registrar Pedido'
     select 'SDU | Rio', from: 'Galpão Destino'
     select supplier.corporate_name, from: 'Fornecedor'
-    fill_in 'Data estimada de entrega', with: '20/12/2022'
+    fill_in 'Data estimada de entrega', with: '20/12/2023'
     click_on 'Salvar'
     #Assert
     expect(page).to have_content 'Pedido registrado com sucesso.'
+    expect(page).to have_content 'Pedido ABC12345'
     expect(page).to have_content 'Usuário Responsável: Joao - joao@email.com'
     expect(page).to have_content 'Galpão Destino: SDU | Rio'
     expect(page).to have_content 'Fornecedor: ACME LTDA | 2345678912'
-    expect(page).to have_content 'Data estimada de entrega: 20/12/2022'
+    expect(page).to have_content 'Data estimada de entrega: 20/12/2023'
     expect(page).not_to have_content 'Ponyo Industria Brasil'
     expect(page).not_to have_content 'Maceio'
   end
