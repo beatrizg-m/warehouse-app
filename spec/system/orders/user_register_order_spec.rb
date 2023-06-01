@@ -18,12 +18,26 @@ describe 'Usúario faz um pedido' do
     expect(page).to have_content 'Registre seu pedido'
   end
 
-  it 'com data prevista de entrega passada' do
-    order = Order.new(estimated_delivery_date: 1.day.ago)
+  it 'e não informa a data de entrega' do
+    user = User.create!(name: 'Joao', email: 'joao@email.com', password: 'password')
+    warehouse = Warehouse.create(name: 'Rio', code:'SDU', city: 'Rio de Janeiro', area: 60_000,
+      address: 'Av do porto, 1000', cep: '20000-000', description: 'Galpao do Rio')
+    supplier = Supplier.create!(corporate_name:'ACME LTDA', brand_name: 'ACME', registration_number: '2345678912',
+      full_address: 'Av das Ubaias, 50', city: 'Bauru', state: 'SP',
+      email: 'contato@acme.com')
 
-    order.valid?
 
-    expect(order.errors.include? :estimated_delivery_date).to be true
+    login_as(user)
+    visit root_path
+    click_on 'Registrar Pedido'
+    select 'SDU | Rio', from: 'Galpão Destino'
+    select supplier.corporate_name, from: 'Fornecedor'
+    fill_in 'Data estimada de entrega', with: ''
+    click_on 'Salvar'
+
+    expect(page).to have_content 'Não foi possivel registrar o pedido.'
+    expect(page).not_to have_content 'Pedido registrado com sucesso.'
+
   end
 
   it 'com sucesso' do

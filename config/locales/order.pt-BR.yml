@@ -9,3 +9,4 @@ pt-BR:
         supplier_id: 'Fornecedor'
         estimated_delivery_date: 'Data estimada de entrega'
         user_id: 'Usuário Responsável'
+        code: 'Código'
