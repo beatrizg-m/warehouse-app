@@ -42,9 +42,9 @@ describe 'Usuário busca por um pedido' do
 
     expect(page).to have_content "Resultados da busca por: #{order.code}"
     expect(page).to have_content '1 pedido encontrado'
-    expect(page).to have_content "Código #{order.code}"
-    expect(page).to have_content "Galpão Destino SDU"
-    expect(page).to have_content "Fornecedor ACME LTDA"
+    expect(page).to have_content "Código: #{order.code}"
+    expect(page).to have_content "Galpão Destino: SDU"
+    expect(page).to have_content "Fornecedor: ACME LTDA"
 
   end
 
@@ -80,9 +80,9 @@ describe 'Usuário busca por um pedido' do
     expect(page).to have_content '2 pedidos encontrados'
     expect(page).to have_content('GRU12345')
     expect(page).to have_content('GRU98765')
-    expect(page).to have_content('Galpão Destino GRU | Aeroporto SP')
+    expect(page).to have_content('Galpão Destino: GRU | Aeroporto SP')
     expect(page).not_to have_content('SDU12345')
-    expect(page).not_to have_content('Galpão Destino SDU | Rio')
+    expect(page).not_to have_content('Galpão Destino: SDU | Rio')
 
 
   end
