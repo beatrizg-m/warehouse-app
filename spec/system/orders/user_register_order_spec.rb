@@ -62,7 +62,7 @@ describe 'Usúario faz um pedido' do
     click_on 'Registrar Pedido'
     select 'SDU | Rio', from: 'Galpão Destino'
     select supplier.corporate_name, from: 'Fornecedor'
-    fill_in 'Data estimada de entrega', with: '20/12/2023'
+    fill_in 'Data estimada de entrega', with: '20/12/2024'
     click_on 'Salvar'
     #Assert
     expect(page).to have_content 'Pedido registrado com sucesso.'
@@ -70,7 +70,8 @@ describe 'Usúario faz um pedido' do
     expect(page).to have_content 'Usuário Responsável: Joao - joao@email.com'
     expect(page).to have_content 'Galpão Destino: SDU | Rio'
     expect(page).to have_content 'Fornecedor: ACME LTDA | 2345678912'
-    expect(page).to have_content 'Data estimada de entrega: 20/12/2023'
+    expect(page).to have_content 'Situação do Pedido: Pendente'
+    expect(page).to have_content "Data estimada de entrega: 20/12/2024"
     expect(page).not_to have_content 'Ponyo Industria Brasil'
     expect(page).not_to have_content 'Maceio'
   end

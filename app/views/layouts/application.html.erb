@@ -21,8 +21,8 @@
 
         <% if user_signed_in? %>
           <%= form_with(url: search_orders_path , method: :get) do |f|%>
-            <%= f.label :query, 'Buscar Pedido'%>
-            <%= f.text_field :query%>
+            <%= f.label :query, 'Buscar Pedido' %>
+            <%= f.text_field :query %>
             <%= f.submit 'Buscar'%>
           <% end %>
         <% end %>

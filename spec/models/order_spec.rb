@@ -76,7 +76,7 @@ RSpec.describe Order, type: :model do
       supplier = Supplier.create!(corporate_name:'ACME LTDA', brand_name: 'ACME', registration_number: '2345678912',
                           full_address: 'Av das Ubaias, 50', city: 'Bauru', state: 'SP', email: 'contato@acme.com')
       first_order = Order.create!(user: user, warehouse: warehouse, supplier: supplier, estimated_delivery_date: '2023-10-20')
-      second_order = Order.new(user: user, warehouse: warehouse, supplier: supplier, estimated_delivery_date: '2023-07-10')
+      second_order = Order.new(user: user, warehouse: warehouse, supplier: supplier, estimated_delivery_date: 1.day.from_now)
 
       second_order.save!
 
